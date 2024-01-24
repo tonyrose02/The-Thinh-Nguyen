@@ -1,0 +1,235 @@
+﻿@page "/query/{ClubId?}"
+@using StarTEDSystem.BLL
+@using StarTEDSystem.Entities
+<PageTitle>Clubs CRUD</PageTitle>
+<h3>Clubs CRUD</h3>
+
+<br />
+@if (feedbackMessage.Length > 0)
+{
+    <div class="alert alert-info">
+        @feedbackMessage
+    </div>
+}
+
+<br />
+
+<fieldset>
+    <div class="mb-3">
+        <label for="ClubId" class="form-label">Club ID</label>
+        <input @bind="CurrentClubs.ClubID"
+               type="text"
+               class="form-control"
+               id="ClubId"
+               >
+    </div>
+    <div class="mb-3">
+        <label for="clubName" class="form-label">Club Name</label>
+        <input @bind="CurrentClubs.ClubName"
+               type="text"
+               class="form-control"
+               id="clubName" >
+    </div>
+    <div class="mb-3">
+        <label for="avStaff" class="form-label">Club Staff</label>
+        <select @bind="CurrentClubs.EmployeeID"
+                type="text"
+                class="form-control"
+                id="avStaff">
+
+            <option value="0">--- select an Available Staff---</option>
+            @foreach (var currentavailabeStaff in availabeStaff)
+            {
+                <option value="@currentavailabeStaff.EmployeeID"
+                        selected="@(currentavailabeStaff.EmployeeID == CurrentClubs.EmployeeID)">
+                    @currentavailabeStaff.FullName
+                </option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="clubStatus" class="form-label">Club Status</label>
+        <div class="form-check form-switch">
+            <input @bind="CurrentClubs.Active" type="checkbox" class="form-check-input" id="clubStatus">
+            <label class="form-check-label" for="clubStatus">
+                @((CurrentClubs.Active ? "Active" : "Inactive"))
+            </label>
+        </div>
+    </div>
+       <div class="mb-3">
+        <label for="clubFee" class="form-label">Club Fees</label>
+        <input @bind="CurrentClubs.Fee"
+               type="number"
+               class="form-control"
+               id="clubFee"
+               >
+    </div>
+</fieldset>
+<button @onclick="OnClickToReturn" type="submit" class="btn btn-info rounded-pill">
+           Return to the Clubs
+</button>
+<button @onclick="clickToDeActive" type="submit" class="btn btn-info rounded-pill">
+    Deactived the Clubs
+</button>
+<button @onclick="clickToSave" type="submit" class="btn btn-info rounded-pill">
+    Save Changes
+</button>
+<button @onclick="clickToAdd" type="submit" class="btn btn-info rounded-pill">
+    Add New Clubs
+</button>
+
+@code {
+    [Parameter]
+    public string? ClubId { get; set; }
+
+    private string feedbackMessage = "";
+
+    [Inject]
+    private EmployeeServices employeeServices { get; set; }
+    private List<Employee> availabeStaff = new();
+    [Inject]
+    private ClubServices clubServices { get; set; }
+    private Club CurrentClubs = new();
+    [Inject]
+    protected NavigationManager CurrentNavigationManager { get; set; }
+    protected override void OnInitialized()
+    {
+        availabeStaff = employeeServices.employyee_GetStaffAvailabeForClub();     
+        if(ClubId != null)
+        {
+            CurrentClubs = clubServices.club_GetClubByID(ClubId);
+        }
+        base.OnInitialized();
+    }
+    private Exception GetInnerException(Exception ex)
+    {
+        while (ex.InnerException != null)
+            ex = ex.InnerException;
+        return ex;
+    }
+    private void OnClickToReturn()
+    {
+        CurrentNavigationManager.NavigateTo($"/clubs/{CurrentClubs.Active}");
+    }
+    private void clickToDeActive()
+    {
+        try
+        {
+            int rowsaffected = clubServices.club_ChangeStatus(CurrentClubs);
+            if (rowsaffected == 0)
+            {
+                feedbackMessage = $"Club ID:{CurrentClubs.ClubID} has been not been De-Activated/Activated."
+                    + " Check to see if product is still on file";
+            }
+            else
+            {
+                if (CurrentClubs.Active)
+                {
+                    feedbackMessage = $"Clubs ID:{CurrentClubs.ClubID} has been Activated.";
+                }
+                else
+                {
+                    feedbackMessage = $"Clubs ID:{CurrentClubs.ClubID} has been De-Activated.";
+                }
+
+            }
+
+        }
+        catch (ArgumentNullException ex)
+        {
+            feedbackMessage = $"Deactive Error: {GetInnerException(ex).Message}";
+        }
+        catch (ArgumentException ex)
+        {
+            feedbackMessage = $"Deactive Error: {GetInnerException(ex).Message}";
+        }
+        catch (Exception ex)
+        {
+            feedbackMessage = $"System Error: {GetInnerException(ex).Message}";
+        }
+    }
+    private void clickToSave()
+    {
+        try
+        {
+            if (CurrentClubs.EmployeeID == null)
+            {
+                throw new ArgumentException("You must select an Employment");
+            }
+            if (string.IsNullOrWhiteSpace(CurrentClubs.ClubID))
+            {
+                throw new ArgumentException("You must enter Club ID");
+            }
+            if (string.IsNullOrWhiteSpace(CurrentClubs.ClubName))
+            {
+                throw new ArgumentException("You must enter Club Name");
+            }
+            if (CurrentClubs.Fee == 0)
+            {
+                throw new ArgumentException("You must enter Club Fee");
+            }
+            int rowsaffected = clubServices.club_SaveChange(CurrentClubs);
+            if (rowsaffected == 0)
+            {
+                feedbackMessage = $"Club (ID:{CurrentClubs.ClubID} has been not been updated."
+                    + " Check to see if product is still on file";
+            }
+            else
+            {
+                feedbackMessage = $"Club ID:{CurrentClubs.ClubID} has been updated.";
+            }
+
+        }
+        catch (ArgumentNullException ex)
+        {
+            feedbackMessage = $"Save Error: {GetInnerException(ex).Message}";
+        }
+        catch (ArgumentException ex)
+        {
+            feedbackMessage = $"Save Error: {GetInnerException(ex).Message}";
+        }
+        catch (Exception ex)
+        {
+            feedbackMessage = $"System Error: {GetInnerException(ex).Message}";
+        }
+    }
+
+    private void clickToAdd()
+    {
+        try
+        {
+            if (CurrentClubs.EmployeeID == null)
+            {
+                throw new ArgumentException("You must select an Employment");
+            }
+            if (string.IsNullOrWhiteSpace(CurrentClubs.ClubID))
+            {
+                throw new ArgumentException("You must enter Club ID");
+            }
+            if (string.IsNullOrWhiteSpace(CurrentClubs.ClubName))
+            {
+                throw new ArgumentException("You must enter Club Name");
+            }
+            if (CurrentClubs.Fee == 0)
+            {
+                throw new ArgumentException("You must enter Club Fee");
+            }
+            string newClubID = clubServices.club_AddNewClub(CurrentClubs);
+            CurrentClubs.ClubID = newClubID;
+            feedbackMessage = $"Club ID:{newClubID} has been added.";
+
+        }
+        catch (ArgumentNullException ex)
+        {
+            feedbackMessage = $"Save Error: {GetInnerException(ex).Message}";
+        }
+        catch (ArgumentException ex)
+        {
+            feedbackMessage = $"Save Error: {GetInnerException(ex).Message}";
+        }
+        catch (Exception ex)
+        {
+            feedbackMessage = $"System Error: {GetInnerException(ex).Message}";
+        }
+    }
+}

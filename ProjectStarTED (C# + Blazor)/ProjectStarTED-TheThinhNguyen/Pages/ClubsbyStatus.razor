@@ -1,0 +1,130 @@
+﻿@page "/clubs/{IsActive?}"
+@using StarTEDSystem.BLL
+@using StarTEDSystem.Entities
+<PageTitle>Clubs by Status</PageTitle>
+<h3>Clubs by Status</h3>
+
+<br />
+@if (feedbackMessage.Length > 0)
+{
+    <div class="alert alert-info">
+        @feedbackMessage
+    </div>
+}
+@if (errorDictionary.Count() > 0)
+{
+    <div class="alert alert-danger">
+        <p>Please fix the following issues:</p>
+        <ul>
+            @foreach (var message in errorDictionary.Values)
+            {
+                <li>@message</li>
+            }
+        </ul>
+    </div>
+}
+<br />
+<label> Select Club Status</label>&nbsp;&nbsp;
+@foreach (var option in statusOptions)
+{
+    <div class="form-check form-check-inline">
+        <input class="form-check-input " type="radio" name="status" id="@option" value="@option"
+               checked="@(selectedOption == "" ? false:option == selectedOption)"
+        @onchange="() => SelectedOption(option)">
+        <label class="form-check-label" for="@option">
+            @option
+        </label>
+    </div>
+}
+<div>
+    <button type="submit">
+        <NavLink href="query">Add New Club</NavLink>
+    </button>
+</div>
+
+<br />
+
+<button @onclick="GetClubs">Search</button>
+
+<div class="row">
+    @if (clublist.Count > 0)
+    {
+        <div class="col-md-12 overflow-scroll" style="height:250px">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Staff</th>
+                        <th>Fee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Club item in clublist)
+                    {
+                        <tr>
+                            <td><a href="/query/@item.ClubID">Edit</a></td>
+                            <td>@item.ClubID</td>
+                            <td>@item.ClubName</td>
+                            <td>@(item.Employee?.FullName ?? "No Staff Member")</td>
+                            <td>@item.Fee.ToString("0.00")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+
+</div>
+
+@code {
+    [Parameter]
+    public string? IsActive { get; set; }
+
+    private string feedbackMessage = "";
+
+    private Dictionary<string, string> errorDictionary { get; set; } = new Dictionary<string, string>();
+    private bool isActive = false;
+    private List<string> statusOptions = new List<string> { "Active","In-Active" };
+    private string selectedOption;
+    [Inject]
+    private ClubServices clubServices { get; set; }
+    private List<Club> clublist = new List<Club>();
+
+    protected override void OnInitialized()
+    {
+        selectedOption = "";
+        base.OnInitialized();
+    }
+    private void SelectedOption(string option)
+    {
+        selectedOption = option;
+        if (option == "Active")
+        {
+            isActive = true;
+        }
+        else
+        {
+            isActive = false;
+        }
+    }
+
+    private void GetClubs()
+    {
+        feedbackMessage = "";
+        errorDictionary.Clear();
+        if (string.IsNullOrWhiteSpace(selectedOption))
+        {
+            errorDictionary.Add("Status Selection", "Club Status is required!");
+        }
+        if (errorDictionary.Count == 0)
+        {
+            clublist = clubServices.Clubs_GetClubsByStatus(isActive);
+            feedbackMessage = $"view the list of all {selectedOption} Clubs belows";
+        }    
+    }
+
+  
+}
