@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainSystem", "TrainSystem\TrainSystem.csproj", "{B5433158-1FB1-488F-B6D8-CA113B3E581C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestingEx1", "UnitTestingEx1\UnitTestingEx1.csproj", "{CFCC254C-68DF-4142-81D2-840E15050D24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5433158-1FB1-488F-B6D8-CA113B3E581C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5433158-1FB1-488F-B6D8-CA113B3E581C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5433158-1FB1-488F-B6D8-CA113B3E581C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5433158-1FB1-488F-B6D8-CA113B3E581C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFCC254C-68DF-4142-81D2-840E15050D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFCC254C-68DF-4142-81D2-840E15050D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFCC254C-68DF-4142-81D2-840E15050D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFCC254C-68DF-4142-81D2-840E15050D24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {788525CD-46D6-40C0-A850-941E2EC97D09}
+	EndGlobalSection
+EndGlobal
