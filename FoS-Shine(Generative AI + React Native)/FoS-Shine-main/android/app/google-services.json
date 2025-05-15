@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "738497870152",
+    "project_id": "adewunmi-dev",
+    "storage_bucket": "adewunmi-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738497870152:android:c4fe9453d0d66a5bc45b7d",
+        "android_client_info": {
+          "package_name": "com.facultyofskin.fos_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738497870152-ch2al55gekv6fue1cnh7vht7sb8vo8a7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.facultyofskin.fos_mobile",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "738497870152-jo0aro4c5d3nudlhsek6hfft2ob7e6b3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.facultyofskin.fos_mobile",
+            "certificate_hash": "8e4cc761af58b4907362d2b7f48094a3eeaa35e4"
+          }
+        },
+        {
+          "client_id": "738497870152-qki8f438qiefg3jff9d3tjig7iv6kvip.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.facultyofskin.fos_mobile",
+            "certificate_hash": "4b9c220ff3b4280582b1f2d16d3391fb8fa56fe0"
+          }
+        },
+        {
+          "client_id": "738497870152-t1c4i14j5kkn0d7gnsh6pa7ubpapjiq3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.facultyofskin.fos_mobile",
+            "certificate_hash": "3486bd57ef23e5516e573e050c36aa8c11825160"
+          }
+        },
+        {
+          "client_id": "738497870152-t8ijqh5i1mjf9iv29b8t53qahpm43fmq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.facultyofskin.fos_mobile",
+            "certificate_hash": "531e393a1ba069f13b0246d6afc5cf4d585e1ac1"
+          }
+        },
+        {
+          "client_id": "738497870152-0a0rpr8pl3jugfg9ft31d4hneplaanja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcMrpAv1AC5GrLCYJE-xH9SCAD9SzinLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738497870152-0a0rpr8pl3jugfg9ft31d4hneplaanja.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "738497870152-a90rnlu8dr7snqg0eb75c7f5ffg5c4j3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.facultyofskin.fos-mobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

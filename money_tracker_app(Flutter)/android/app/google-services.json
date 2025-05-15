@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "612651442356",
+    "project_id": "finalmobile-project",
+    "storage_bucket": "finalmobile-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612651442356:android:93d1e4703ae841f0b137e1",
+        "android_client_info": {
+          "package_name": "fn.thethinhnguyen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612651442356-qebjgujqkqk44mu7or102lplnchm02jm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsV7D5VAWxGAB8nHQqs9DetZ0jKTr2Kmk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612651442356-qebjgujqkqk44mu7or102lplnchm02jm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "612651442356-4i84ohsa3kd480pg6utnev75in9tjg1q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.moneyTrackerApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

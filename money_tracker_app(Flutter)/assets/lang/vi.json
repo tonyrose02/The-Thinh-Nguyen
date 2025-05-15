@@ -1,0 +1,28 @@
+{
+    "app_title": "Quản lý chi tiêu",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "settings": "Cài đặt",
+    "home": "Trang chủ",
+    "transactions": "Giao dịch",
+    "add_transaction": "Thêm giao dịch",
+    "edit_transaction": "Sửa giao dịch",
+    "label": "Tên",
+    "amount": "Số tiền",
+    "description": "Mô tả",
+    "category": "Danh mục",
+    "income": "Thu nhập",
+    "expense": "Chi tiêu",
+    "is_paid": "Đã thanh toán",
+    "set_alarm": "Đặt báo thức",
+    "pick_date": "Chọn ngày",
+    "save": "Lưu",
+    "logout": "Đăng xuất",
+    "balance_summary": "Tóm tắt số dư",
+    "recent_transactions": "Giao dịch gần đây",
+    "language": "Ngôn ngữ",
+    "enable_notifications": "Bật thông báo"
+  }
+  
