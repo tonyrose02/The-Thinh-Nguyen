@@ -1,0 +1,524 @@
+/* .inria-serif-bold {
+    font-family: "Inria Serif", serif;
+    font-weight: 700;
+    font-style: normal;
+  } */
+
+  /* .inria-sans-regular {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  } */
+
+
+
+body {
+    font-family: "Inter", sans-serif;
+    font-size: 100%;
+    background-color: #FFFFFF;
+    font-weight: 400;
+}
+h1{
+    font-size: 8rem;
+    font-family: "Inria Serif", serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 12.5rem;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+h3{
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+}
+h4{
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-size: 2.25rem;
+}
+p{
+    font-size: 1rem;
+}
+.inner-container{
+    padding: 0 1rem;
+    margin: auto;
+}
+nav a:hover{
+   color : #6178A6;
+}
+/* -------------header--------------- */
+header{
+    color: #FFFFFF ;
+    background-color: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 1rem;
+}
+header .flex{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+.first-links{
+    display: flex;
+}
+.first-links li{
+    margin-right: 2rem;
+}
+.first-links a{
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.first-links li:nth-of-type(1) a{
+    font-weight: 700;
+}
+.first-links li:nth-of-type(2) a{
+    font-weight: 200;
+    font-style: italic;
+}
+.banner {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #FFFFFF;
+    align-items: center;
+
+}
+.banner .second-links{
+    display: flex;
+   
+}
+.second-links li{
+    margin-left: 2rem;
+}
+.second-links a{
+    font-size: 2rem;
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+}
+/* ---------------hero-banner--------- */
+.hero-banner > img{
+   display: none;
+}
+.hero-banner{
+    background-image: url(../img/fashon-banner.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    padding: 24.25rem 0 7.813rem 0;
+    color: #FFFFFF;
+    
+}
+.hero-banner div{
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0.875rem 0 0.875rem 1.813rem ;
+ }
+
+ .hero-banner p{
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+ }
+ /* -------scroll wrapper --------*/
+ .horizontal-roll{
+    padding: 5.25rem 0 4.5rem 1.75rem;
+ }
+.scroll-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 5rem;
+    overflow-x: scroll;
+}
+.card {
+    flex: 0 0 12.5rem;
+    margin: 2.25rem 1rem;
+}
+.card-body {
+    text-align: left;
+}
+.card-body p{
+    margin-top: 1.333rem;
+}
+ /* -------Smile --------*/
+ .smile div{
+    display: flex;
+    margin-top: 1.5rem ;
+ }
+ .smile h3{
+    margin-left:1.75rem ;
+ }
+ .smile img{
+    width: 50%;
+ }
+  /* -------Division --------*/
+
+.division{
+    padding: 4.5rem 1.875rem 4.5rem 1.875rem;
+}
+.flex-division{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.flex-division img{
+    width: 18.75rem;
+}
+.card-division:not(:nth-of-type(3)){
+    margin-right: 6rem;
+}
+.division p{
+    font-size: 2.25rem;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+}
+  /* -------Division --------*/
+.buttons{
+    padding: 0 4.75rem 4.5rem 4.75rem;  
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.buttons button{
+    padding: 1rem;
+    width: 18.438rem;
+    text-align: left;
+    background-color: #413F3F;
+    color: #FFFFFF;
+    font-weight: 700;
+  
+}
+.buttons button:not(:nth-of-type(4)){
+    margin-right: 2.25rem;
+}
+button:hover{
+    background-color: #203256;
+}
+  /* -------footer --------*/
+.flex-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 9.375rem 1.5rem 9.375rem;
+}
+.li-bold{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.border{
+    background-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem;
+    font-size:0.875rem ;
+}
+footer a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+footer a:hover{
+    color: #6178A6;
+}
+  /* ------- poppup --------*/
+
+  .popup {
+    background: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%,-50%);
+    border-radius: 0.5rem;
+    padding: 0 1.875rem 4.438rem 1.875rem ;
+}
+.popup h2{
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+}
+.popup img{
+    width: 27.938rem;
+}
+.popup p{
+    font-size: 2.25rem;
+    margin: 1.5rem 0 1.5rem 0;
+}
+.popup button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.875rem;
+    color: #000000;
+    margin: 3rem 0 3rem auto; 
+    display: block;
+    font-weight: 700;
+}
+.popup-inner-container p:nth-of-type(2){
+    font-size: 1.5rem;
+}
+.popup-inner-container p:nth-of-type(3){
+    font-weight: 700;
+    margin: 3rem 0 3rem 0;
+    font-size: 2rem;
+}
+.image img:not(:last-child){
+    margin-bottom: 3rem;
+}
+.popup-inner-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.popup-inner-container div:first-child{
+    margin-right: 8.5rem;
+    width: 100%;
+}
+form div {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+form{
+    margin: 3rem 0 3rem 0;
+}
+input{
+    width: 100%;
+    line-height: 2.5rem;
+    border: none;
+    border-bottom: 1px solid #666666;
+    padding-left: 0.5rem;
+    align-items: center;
+}
+::placeholder{
+    font-size: 1.5rem;
+}
+input[type=submit]{
+    width: 12.125rem;
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    background-color: #6178A6;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+input[type=submit]:hover {
+    background-color:#203256;
+    cursor: pointer;
+}
+.popup-inner-container a{
+    font-size: 1.5rem;
+    margin-right: 2.313rem;
+    color: #000000;
+}
+.popup-inner-container a:hover{
+    color:#6178A6;
+}
+.privacy-container{
+    padding: 4.313rem 1.875rem 4.313rem 1.875rem ;
+    background-image: url(../img/privacy-moon-1920.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    color: #FFFFFF;
+}
+.privacy {
+    width: 57.063rem;
+}
+
+.privacy h1{
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+.privacy h2{
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+.privacy p{
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+.privacy-container a{
+    position: fixed;
+    background-color:#033955;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #FFFFFF;
+    top: 85%;
+    left: 80%;
+}
+.privacy-container a:hover{
+    background-color: #6178A6;
+}
+
+@media  screen and (min-width: 500px){
+
+    .banner {
+        display: flex;
+       flex-wrap: wrap;
+    }
+    .banner > .second-links{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+       
+    }
+    .banner li{
+        margin: 0;
+        margin-right: 1rem;
+        margin-bottom:1rem ;
+    }
+  .hero-banner{
+        background-image: none;
+        padding: 0;
+    }
+    .hero-banner > img{
+       display: block;
+    }
+    .hero-banner >div{
+        background-color: #000000;
+        text-align: center;
+        padding: 0;
+        padding-bottom: 2rem;
+    }
+    .horizontal-roll,.smile{
+        text-align: center;
+    }
+    .smile > div{
+        flex-wrap: wrap;
+    }
+    .smile  img{
+        width: 100%;
+      
+    }
+    .division{
+        text-align: center;
+        padding: 0;
+        padding-top: 1rem;
+    }
+    .flex-division{
+        flex-wrap: wrap ;
+        flex-direction: column-reverse;
+    }
+    .flex-division> .card-division{
+        margin-right: 0;
+        text-align: left;
+       
+    }
+    .card-division p{
+        margin: 1rem;
+    }
+    .division img{
+        width: 100%;
+    }
+    .buttons{
+        flex-wrap: wrap;
+    }
+    .buttons button{
+        margin-bottom: 2.25rem;
+    }
+    .flex-footer{
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+    }
+    .flex-footer li{
+        margin-top: 1rem;
+    }
+    .popup .image{
+        display: none;
+    }
+
+}
+@media  screen and (min-width: 1440px){
+    .hero-banner > img{
+        display: none;
+     }
+     .hero-banner{
+         background-image: url(../img/fashon-banner.webp);
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-position:center;
+         padding: 24.25rem 0 7.813rem 0;
+         color: #FFFFFF;  
+     }
+     .hero-banner div{
+         text-align: left;
+         background-color: rgba(0, 0, 0, 0.4);
+         padding: 0.875rem 0 0.875rem 1.813rem ;
+      }
+
+      /* -------scroll wrapper --------*/
+      .horizontal-roll{
+         text-align: left;
+      }
+     
+     .division{
+         padding: 4.5rem 1.875rem 4.5rem 1.875rem;
+         text-align:left;
+     }
+            /* -------Division --------*/
+     .flex-division{
+         justify-content:space-around;
+         margin-top: 1.5rem;
+         flex-wrap: nowrap;
+         flex-direction: row;
+         padding: 0 5rem 0 5rem;
+     }
+
+     .flex-division img{
+         width: 18.75rem;
+     }
+      /* -------Smile --------*/
+    .smile > div{
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        margin-top: 1.5rem ;
+    }
+    .smile h3{
+        margin-left:1.75rem ;
+        text-align: left;
+    }
+    .smile img{
+        width: 50%;
+    }
+
+       /* -------footer --------*/
+     .flex-footer{
+         flex-direction: row;
+         text-align: left;
+         justify-content: space-between;
+         padding: 0 9.375rem 1.5rem 9.375rem;
+     }
+
+       /* ------- poppup --------*/
+     
+     .popup .image{
+        display: block;
+        width: 100%;
+     }
+
+     .popup-inner-container{
+         flex-wrap: nowrap;
+         justify-content:space-around;
+         flex-direction: row;
+     }
+
+
+}
