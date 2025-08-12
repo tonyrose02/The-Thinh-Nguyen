@@ -1,14 +1,3 @@
-//JS for modal goes here
-window.addEventListener("load", function(){
-    setTimeout(
-        function open(event){
-            document.querySelector(".popup").style.display = "block";
-        },
-        1000
-    )
-});
-
-
-document.querySelector("#close").addEventListener("click", function(){
-    document.querySelector(".popup").style.display = "none";
+document.querySelector('.toggle-btn').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('show-nav');
 });
